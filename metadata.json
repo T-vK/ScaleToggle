@@ -3,8 +3,13 @@
   "description": "Adds a toggle to change the display scaling of the primary monitor between 100% and 200% (requires python3)",
   "uuid": "scaletoggle@t-vk.github.com",
   "shell-version": [
-    "41"
+    "45",
+    "46",
+    "47",
+    "48"
   ],
-  "version": 1.0,
-  "url": "https://github.com/T-vK/ScaleToggle"
+  "version": 2.0,
+  "url": "https://github.com/T-vK/ScaleToggle",
+  "session-modes": ["unlock-dialog", "user"],
+  "gettext-domain": "scaletoggle@t-vk.github.com"
 }

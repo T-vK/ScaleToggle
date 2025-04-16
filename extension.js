@@ -2,9 +2,12 @@
 
 const TOGGLE_SCRIPT_PATH='.local/share/gnome-shell/extensions/scaletoggle@t-vk.github.com/scaletoggle.py' // relative to home
 
-const { Clutter, GObject, St, Gio } = imports.gi;
-const Main = imports.ui.main;
-const PanelMenu = imports.ui.panelMenu;
+import Clutter from 'gi://Clutter';
+import GObject from 'gi://GObject';
+import St from 'gi://St';
+import Gio from 'gi://Gio';
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
 
 const TOGGLE_ON_ICON = 'computer-symbolic';
 const TOGGLE_OFF_ICON = 'video-display-symbolic';
@@ -55,7 +58,7 @@ class Indicator extends PanelMenu.Button {
     }
 });
 
-class Extension {
+export default class ScaleToggleExtension {
     constructor(uuid) {
         this._uuid = uuid;
     }
@@ -70,8 +73,4 @@ class Extension {
         this._indicator.destroy();
         this._indicator = null;
     }
-}
-
-function init(meta) {
-    return new Extension(meta.uuid);
 }
